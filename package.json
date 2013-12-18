@@ -1,0 +1,15 @@
+{
+  "name": "hall_monitor",
+  "version": "0.0.1",
+  "description": "Simple irc bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "irc",
+    "bot"
+  ],
+  "author": "Brandon Farmer",
+  "license": "BSD-2-Clause"
+}
