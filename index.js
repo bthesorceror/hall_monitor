@@ -31,7 +31,8 @@ function handlePluginMessage(plugin, nick, message) {
     nick: nick,
     raw_message: message,
     join: _.bind(this.join, this),
-    reply: _.bind(this.say, this, nick)
+    reply: _.bind(this.say, this, nick),
+    channels: _.bind(this.channels, this)
   },
   args);
 }
@@ -53,6 +54,10 @@ function Bot(server, options) {
 
 Bot.prototype.register = function(plugin) {
   this.plugins.push(plugin);
+}
+
+Bot.prototype.channels = function() {
+  return this.client.chans;
 }
 
 Bot.prototype.onHelp = function(nick) {
