@@ -11,5 +11,9 @@
     "bot"
   ],
   "author": "Brandon Farmer",
-  "license": "BSD-2-Clause"
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "irc": "~0.3.6",
+    "underscore": "~1.5.2"
+  }
 }
