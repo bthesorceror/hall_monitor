@@ -46,7 +46,7 @@ function Bot(server, options) {
   EventEmitter.call(this);
   this.plugins = [];
   this.options = _.extend(_.clone(defaults), options || {});
-  this.client  = createClient(server, this.options);
+  this.client  = this.options.client || createClient(server, this.options);
   this.bindEvents();
 }
 
