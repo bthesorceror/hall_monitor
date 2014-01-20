@@ -77,6 +77,7 @@ Bot.prototype.onPrivateMessage = function(nick, message) {
     this.onHelp(nick);
   } else {
     this.onPluginMessage(nick, message);
+    this.emit('pm', nick, message);
   }
 }
 

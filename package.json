@@ -15,5 +15,8 @@
   "dependencies": {
     "irc": "~0.3.6",
     "underscore": "~1.5.2"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.0"
   }
 }
