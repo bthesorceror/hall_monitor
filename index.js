@@ -15,23 +15,23 @@ function pluginHelpMessage(plugin) {
     plugin.help
 }
 
-function handlePluginHelp(plugin, nick) {
-  if (!authorized(plugin, nick)) return;
-  this.say(nick, pluginHelpMessage(plugin));
+function handlePluginHelp(plugin, from) {
+  if (!authorized(plugin, from)) return;
+  this.say(from, pluginHelpMessage(plugin));
 }
 
-function handlePluginMessage(plugin, nick, message) {
+function handlePluginMessage(plugin, from, message) {
   var matches = message.match(plugin.matcher);
   if (!matches) return;
-  if (!authorized(plugin, nick)) return;
+  if (!authorized(plugin, from)) return;
 
   var args = matches.slice(1);
 
   plugin.onMatch.apply({
-    nick: nick,
+    nick: from,
     raw_message: message,
     join: _.bind(this.join, this),
-    reply: _.bind(this.say, this, nick),
+    reply: _.bind(this.say, this, from),
     channels: _.bind(this.channels, this)
   },
   args);
