@@ -8,11 +8,10 @@ module.exports = {
     return nick == 'bthesorceror';
   },
   onMatch: function() {
-    console.log(this.channels());
     _.each(this.channels(), function(channel, name) {
       this.reply(name);
     }, this);
   },
-  help: "type 'where are you' to cause the bot to list channel monitoring"
+  help: "type 'where are you?' to cause the bot to list channel monitoring"
 }
 
